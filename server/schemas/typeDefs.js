@@ -39,9 +39,10 @@ const typeDefs = gql`
         login(email: String!, password: String!): Auth
         addUser(username: String!, email: String!, password: String!): Auth
         saveBook(bookId: String!, authors: [String], description: String!, title: String!, image: String!, link: String!): User
+        deleteBook(_id: ID): User
     }
     `;
     
     module.exports = typeDefs;
-    // saveBook(BookInput: BookInput!): User
-    // bookId: String!, authors: [String], description: String!, title: String!, image: String!, link: String!
+    // saveBook(input: BookInput!): User
+    // saveBook(bookId: String!, authors: [String], description: String!, title: String!, image: String!, link: String!): User
