@@ -45,13 +45,16 @@ const resolvers = {
             const token = signToken(user);
             return { token, user };
         },
-        saveBook: async (parent, args, context) => {
+        saveBook: async (parent, { bookId, authors, title, description, image, link }, context) => {
+            console.log(bookId);
+            console.log(context.user)
             if(context.user) {
+                console.log(bookId);
                 const updatedUser = await User.findOneAndUpdate(
-                    { bookId: args.Book.bookId},
-                    { $addToSet: { savedBooks: args } },
-                    { new: true }
-                ).populate('savedBooks')
+                    { _id: context.user._id},
+                    { $push: { savedBooks: { bookId, authors, title, description, image, link } } },
+                    { new: true}
+                )
 
                 return updatedUser
             }
