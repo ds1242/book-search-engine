@@ -29,16 +29,17 @@ const LoginForm = () => {
     
     try {
       const response = await login({
-        variables: {  ...userFormData }
+        variables: {...userFormData}
+        
       });
+      console.log(response);
+      // if (!response.ok) {
+      //   throw new Error('something went wrong!');
+      // }
 
-      if (!response.ok) {
-        throw new Error('something went wrong!');
-      }
-
-      const { token, user } = await response.json();
-      console.log(user);
-      Auth.login(token);
+      // const { token, user } = await response.json();
+      // console.log(user);
+      Auth.login(response.data.token);
     } catch (err) {
       console.error(err);
       setShowAlert(true);
