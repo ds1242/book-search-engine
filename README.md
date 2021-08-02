@@ -22,11 +22,24 @@
 
   ## Usage
 
-  none
+  ### Screenshots of Application in Use
+
+  #### User is logged in and searches for a book
+
+  <img width="1000" src="./imgs/logged_in_search.png" alt="searching for books">
+
+  #### User's saved books
+
+  <img width="1000" src="./imgs/users_saved_books.png" alt="user's saved books">
+
+  #### Login/Signup Modal which had functionality changed
+
+  <img width="1000" src="./imgs/login_signup.png" alt="login and signup page">
+
 
   ## Languages
 
-  JavaScript<br>Bootstrap
+  JavaScript<br>Bootstrap<br>React<br>MongoDB<br>GraphQL
 
   ## Contributing
 
